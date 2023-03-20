@@ -1,11 +1,40 @@
 import time
 import os
+def checkDead():
+    global hp
+    x = 10
+    if hp <= 0:
+        while x > 0:
+            print ("YOU DEAD, power off in",x)
+            time.sleep(1)
+            x -= 1
+        resetGame()
+def resetGame():
+    global hp
+    global invest
+    global money
+    money = 0
+    invest = 0 
+    hp = 20
+    save()
+    exit()
 def createSaveFile():
+    f = open("hp.save", "a")
+    f.close()
     f = open("money.save", "a")
     f.close()
     f = open("invest.save", "a")
     f.close()
 def readSave():
+    #hp
+    global hp
+    f = open("hp.save", "r")
+    hpStr = f.read()
+    if hpStr !="":
+        hp = float(hpStr)
+    else:
+        hp = 20 
+    f.close()
     #money
     global money
     f = open("money.save", "r")
@@ -25,6 +54,10 @@ def readSave():
         invest = 0 
     f.close()
 def save():
+    #hp
+    f = open("hp.save", "w")
+    f.write(str(hp))
+    f.close()
     #money
     global money
     f = open("money.save", "w")
@@ -35,13 +68,15 @@ def save():
     f = open("invest.save", "w")
     f.write(str(invest))
     f.close()
-def robbery(moneyAmount, robberyTime):
+def robbery(moneyAmount, robberyTime, hpLost):
+    global hp
     global money
     global invest
     if(os.name == 'posix'):
         os.system('clear')
     else:
         os.system('cls')
+    hp -= hpLost
     while robberyTime > 0:
         print(robberyTime,"seconds to end robbery")
         time.sleep(1)
@@ -55,15 +90,25 @@ def robbery(moneyAmount, robberyTime):
     commandLine()
 def robCommand():
     global moneyAmount
+    print ("Every robbery is bad. You can lost lot's of Health. If you don't continue type NO")
     robType = input("Enter type: ")
-    if robType == "bank":
+    if robType.lower() == "bank":
         moneyAmount = 30000
         robberyTime = 30
-        robbery(moneyAmount, robberyTime)
-    elif robType == "shop":
+        hpLost = 15
+        robbery(moneyAmount, robberyTime, hpLost)
+    elif robType.lower() == "shop":
         moneyAmount = 10000
         robberyTime = 10
-        robbery(moneyAmount, robberyTime)
+        hpLost = 5
+        robbery(moneyAmount, robberyTime, hpLost)
+    elif robType.lower() == "no":
+        if(os.name == 'posix'):
+            os.system('clear')
+        else:
+            os.system('cls')      
+            print ("Good :)")
+        commandLine()
     else:
             if(os.name == 'posix'):
                 os.system('clear')
@@ -132,8 +177,11 @@ def investCommand():
         print("Bro just write T or N :)")
         investCommand()
 def commandLine():
+    global hp
     global money
     save()
+    checkDead()
+    print ("Health:",hp,"HP")
     print ("Money:",money,"$")
     command = input(": ")
     if command == "rob":
@@ -156,7 +204,7 @@ if(os.name == 'posix'):
 else:
     os.system('cls')
 print ("Human life simulator")
-print ("0.0.1")
+print ("0.0.2 - HP added")
 createSaveFile()
 readSave()
 commandLine()
