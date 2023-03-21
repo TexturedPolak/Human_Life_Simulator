@@ -13,7 +13,9 @@ You must run/compile by self.
 <h2>Running</h2>
 <h3>Linux</h3>
 Enter in terminal/console: <br></br>
-<h5>sudo chmod +x Human_Life_Simulator.sh <br>
+<h5>
+cd Downloads <br>
+sudo chmod +x Human_Life_Simulator.sh <br>
 ./Human_Life_Simulator.sh </h5><br></br>
 Game will create some save files. Don't move that.
 <h3>Windows</h3>
