@@ -1,6 +1,6 @@
 # Human Life Simulator
  Game made in Python. In open Alpha.
-<h2> Compiled Versions in Releases </h2>
+<h2> Compiled Versions in <a href="https://github.com/TexturedPolak/Human_Life_Simulator/releases">Releases</a> </h2>
 <h2> Requests: </h2>
 <h3>Linux</h3>
 <li>Python 3.0+</li>
