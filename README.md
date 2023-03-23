@@ -19,6 +19,7 @@ Enter in terminal/console: <br>
 cd Downloads (or what ever folder, where you unpack game)<br>
 chmod +x Human_Life_Simulator.sh <br>
 ./Human_Life_Simulator.sh </h5><br>
+Human_Life_Simulator.py must be in the same folder as Human_Life_Simulator.sh <br>
 Game will create some save files. Don't move that.
 <h3>Windows</h3>
 Just run it. Game will create some save files. Don't move that.
