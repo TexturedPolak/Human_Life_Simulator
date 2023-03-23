@@ -22,4 +22,7 @@ chmod +x Human_Life_Simulator.sh <br>
 Human_Life_Simulator.py must be in the same directory as Human_Life_Simulator.sh <br>
 Game will create some save files. Don't move that.
 <h3>Windows</h3>
-Just run it. Game will create some save files. Don't move that.
+Unpack Human_Life_Simulator.zip <br>
+Human_Life_Simulator.py must be in the same directory as Human_Life_Simulator.bat <br>
+Open Human_Life_Simulator.bat (ignore smartscreen or windows defender) <br>
+
