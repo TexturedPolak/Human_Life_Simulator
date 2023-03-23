@@ -1,4 +1,4 @@
-# Human Live Simulator
+# Human Life Simulator
  Game made in Python. In open Alpha.
 <h2> Compiled Versions in Releases </h2>
 <h2> Requests: </h2>
