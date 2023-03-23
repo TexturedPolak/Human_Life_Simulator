@@ -13,7 +13,7 @@ You request Python 3.0+
 You must run/compile by self.
 <h2>Running</h2>
 <h3>Linux</h3>
-Unpack Human_Life_Simulator.tar
+Unpack Human_Life_Simulator.tar <br>
 Enter in terminal/console: <br>
 <h5>
 cd Downloads (or what ever folder, where you unpack game)<br>
